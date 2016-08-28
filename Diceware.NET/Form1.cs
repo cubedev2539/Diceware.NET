@@ -7881,7 +7881,7 @@ namespace Diceware.NET
             if (e.Button == MouseButtons.Right)
             {
                 listBox1.SelectedIndex = listBox1.IndexFromPoint(e.X, e.Y);
-                Clipboard.SetText(listBox1.SelectedItem.ToString().Split('-')[1]);
+                Clipboard.SetText(listBox1.SelectedItem.ToString().Split('-')[1].Remove(0,1));
             }
         }
     }
