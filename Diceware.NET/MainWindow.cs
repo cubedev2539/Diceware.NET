@@ -7893,7 +7893,7 @@ namespace Diceware.NET
 
         private void aboutDicewareNETToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Diceware.NET: A GUI to select random words from and create passwords using the Diceware word list\nVersion 0.2\nCreated by cubedev2539\n\nDiceware originally created by Arnold G. Reinhold (http://world.std.com/~reinhold/diceware.html)", "About Diceware.NET");
+            MessageBox.Show("Diceware.NET: A GUI to select random words from and create passwords using the Diceware word list\nVersion 1.1\nCreated by cubedev2539\n\nDiceware originally created by Arnold G. Reinhold (http://world.std.com/~reinhold/diceware.html)", "About Diceware.NET");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
