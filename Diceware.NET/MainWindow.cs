@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 
 namespace Diceware.NET
 {
-    public partial class Form1 : Form
+    public partial class MainWindow : Form
     {
         public string[] UnformattedDiceware = new string[]
         {
@@ -7796,7 +7796,7 @@ namespace Diceware.NET
         public Dictionary<int, string> FormattedDiceware = new Dictionary<int, string>();
         public bool RunRandomizer = false;
         public RNGCryptoServiceProvider rand = new RNGCryptoServiceProvider();
-        public Form1()
+        public MainWindow()
         {
             foreach(string str in UnformattedDiceware)
             {
@@ -7883,6 +7883,22 @@ namespace Diceware.NET
                 listBox1.SelectedIndex = listBox1.IndexFromPoint(e.X, e.Y);
                 Clipboard.SetText(listBox1.SelectedItem.ToString().Split('-')[1].Remove(0,1));
             }
+        }
+
+        private void createPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PassCreate passWin = new PassCreate(FormattedDiceware);
+            passWin.Show();
+        }
+
+        private void aboutDicewareNETToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Diceware.NET: A GUI to select random words from and create passwords using the Diceware word list\nVersion 0.2\nCreated by cubedev2539\n\nDiceware originally created by Arnold G. Reinhold (http://world.std.com/~reinhold/diceware.html)", "About Diceware.NET");
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
