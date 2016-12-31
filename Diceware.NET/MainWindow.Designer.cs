@@ -31,7 +31,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,12 +38,15 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutDicewareNETToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.duplicatesAllowedCheck = new System.Windows.Forms.CheckBox();
+            this.stringGenerateNumberControl = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stringGenerateNumberControl)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 333);
+            this.button1.Location = new System.Drawing.Point(12, 400);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(264, 23);
             this.button1.TabIndex = 1;
@@ -64,19 +66,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 365);
+            this.label1.Location = new System.Drawing.Point(10, 338);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Number to Generate:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(122, 362);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "1";
             // 
             // menuStrip1
             // 
@@ -133,12 +127,46 @@
             this.aboutDicewareNETToolStripMenuItem.Text = "About Diceware.NET";
             this.aboutDicewareNETToolStripMenuItem.Click += new System.EventHandler(this.aboutDicewareNETToolStripMenuItem_Click);
             // 
+            // duplicatesAllowedCheck
+            // 
+            this.duplicatesAllowedCheck.AutoSize = true;
+            this.duplicatesAllowedCheck.Location = new System.Drawing.Point(15, 361);
+            this.duplicatesAllowedCheck.Name = "duplicatesAllowedCheck";
+            this.duplicatesAllowedCheck.Size = new System.Drawing.Size(104, 17);
+            this.duplicatesAllowedCheck.TabIndex = 6;
+            this.duplicatesAllowedCheck.Text = "Allow Duplicates";
+            this.duplicatesAllowedCheck.UseVisualStyleBackColor = true;
+            // 
+            // stringGenerateNumberControl
+            // 
+            this.stringGenerateNumberControl.Location = new System.Drawing.Point(122, 336);
+            this.stringGenerateNumberControl.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.stringGenerateNumberControl.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.stringGenerateNumberControl.Name = "stringGenerateNumberControl";
+            this.stringGenerateNumberControl.Size = new System.Drawing.Size(154, 20);
+            this.stringGenerateNumberControl.TabIndex = 7;
+            this.stringGenerateNumberControl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.stringGenerateNumberControl.ValueChanged += new System.EventHandler(this.stringGenerateNumberControl_ValueChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(288, 387);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(288, 435);
+            this.Controls.Add(this.stringGenerateNumberControl);
+            this.Controls.Add(this.duplicatesAllowedCheck);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
@@ -150,6 +178,7 @@
             this.Text = "Diceware.NET";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stringGenerateNumberControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +188,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createPasswordToolStripMenuItem;
@@ -167,6 +195,8 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutDicewareNETToolStripMenuItem;
+        private System.Windows.Forms.CheckBox duplicatesAllowedCheck;
+        private System.Windows.Forms.NumericUpDown stringGenerateNumberControl;
     }
 }
 

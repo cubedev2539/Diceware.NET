@@ -25,12 +25,14 @@ namespace Diceware.NET
 
         private void button1_Click(object sender, EventArgs e)
         {
+            outputText.Text = string.Empty;
             int Loops = (int)numericUpDown1.Value;
             List<string> WordList = new List<string>();
             int TempInt = 0;
             byte[] ByteOut = new byte[1];
             BitArray Bits = new BitArray(13);
             int[] Number = new int[1];
+            Refill:
             for (int l = 0; l < Loops; l++)
             {
                 for (int i = 0; i < 13; i++)
@@ -46,6 +48,23 @@ namespace Diceware.NET
                 }
                 Bits.CopyTo(Number, 0);
                 WordList.Add(Diceware[Number[0]]);
+            }
+            int DuplicateCount = 0;
+            for (int a = 0; a < WordList.Count(); a++)
+            {
+                for (int b = 0; b < WordList.Count(); b++)
+                {
+                    if ((WordList[a] == WordList[b]) && (a != b))
+                    {
+                        WordList.RemoveAt(b);
+                        DuplicateCount++;
+                    }
+                }
+            }
+            if (DuplicateCount != 0)
+            {
+                Loops = DuplicateCount;
+                goto Refill;
             }
             string SeparatorString = string.Empty;
             switch(comboBox1.SelectedIndex)
